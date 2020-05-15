@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.container{ padding-top: 2%; }
+
+.basic-title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.inner-container{
+    display: flex;
+    flex-direction: row;
+    padding-left: 2%;
+    padding-right: 2%;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.vertical-line{
+    border-left: 3px solid #525252;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.dev-mode {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.radio-label { margin-top: 7%; }
+
+.input-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.input-left{ width: 100%; }
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15%;
+}
+
+input[type="submit"] {
+    border: none;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #EFEFEF;
+    border-radius: 1.5rem;
+    -webkit-box-shadow: -1px 19px 23px -8px rgba(0,0,0,0.2);
+    -moz-box-shadow: -1px 19px 23px -8px rgba(0,0,0,0.2);
+    box-shadow: -1px 19px 23px -8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    outline-style: none;
+}
+
+.read-input {
+    display: flex;
+    flex-direction: row;
+}
+.left-block {
+    width: 20%;
+    margin-left: 15%;
+}
+.right-block { width: 35%; }
+
+input{
+    font-size: 1.1rem;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 1px solid #B8B8B8;
+}
+.text{ margin-left: 5%; }
+
+.home{
+    text-decoration: none;
+    margin-right: 2%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #111854;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* small screen */
+@media screen and (max-width:1130px){
+    .inner-container{
+        display: flex;
+        flex-direction: column;
+        padding-left: 2%;
+        padding-right: 2%;
+        align-items: center;
+        margin-top: 3%;
+    }
+    .vertical-line{ 
+        display: none;
+    }
+    .left-block{ 
+        width: 50%;
+        margin-left: 0;
+    }
+    .right-block { 
+        width: 50%; 
+        margin-top: 6%;
+    }
+}

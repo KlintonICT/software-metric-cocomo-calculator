@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic COCOMO</title>
+    <link rel="stylesheet" href="../css/cocomo.css">
+    <link rel="shortcut icon" href="/assets/technology.png" />
+</head>
+<body>
+    <div class="container">
+        <div class="basic-title">Basic COCOMO Calculator</div>
+        <div class="inner-container">
+            <div class="left-block">
+                <div class="dev-mode">Development Mode</div>
+                <form id="form">
+                    <input type="radio" id="mode1" name="mode" value="organic" class="radio-label" checked>
+                    <label for="mode1">Organic</label><br>
+                    <input type="radio" id="mode2" name="mode" value="semi" class="radio-label">
+                    <label for="mode2">Semi-detached</label><br>  
+                    <input type="radio" id="mode3" name="mode" value="embed" class="radio-label">
+                    <label for="mode3">Embedded</label><br><br>
+                    <div class="input">
+                        <div class="input-title">KLOC estimate:</div>
+                        <input type="number" id="kloc" name="kloc" class="input-left">
+                        <div class="input-title" style="margin-top: 5%;">Cost per Person-Month:</div>
+                        <input type="number" id="cost" name="cost" class="input-left">
+                    </div>
+                    <div class="submit-btn">
+                        <input type="submit" value="Calculate" id="calculate">
+                    </div>
+                </form>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="right-block">
+                <div class="input-title" style="margin-top: 2%;">Effort Applied (E):</div>
+                <div class="read-input">
+                    <input type="text" id="effort" name="effort" readonly>
+                    <div class="text">[ person-months ]</div>
+                </div>
+                <div class="input-title" style="margin-top: 5%;">Development Time (D):</div>
+                <div class="read-input">
+                    <input type="text" id="devTime" name="devTime" readonly>
+                    <div class="text">[ months ]</div>
+                </div>
+                <div class="input-title" style="margin-top: 5%;">People required (P):</div>
+                <div class="read-input">
+                    <input type="text" id="people" name="people" readonly>
+                    <div class="text">[ count ]</div>
+                </div>
+                <div class="input-title" style="margin-top: 5%;">Total Cost:</div>
+                <div class="read-input">
+                    <input type="text" id="total" name="total" readonly>
+                </div>
+            </div>
+        </div>
+        <a href="./index.html" class="home">HOME >></a>
+    </div>
+
+    <script type="text/javascript" src="../js/cocomo.js"></script>
+</body>
+</html>

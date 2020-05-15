@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COQUALMO</title>
+    <link rel="shortcut icon" href="/assets/technology.png" />
+    <link rel="stylesheet" href="../css/coqualmo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="coqualmo-title">COQUALMO Calculator</div>
+        <div class="coqualmo-model">
+            <div style="font-weight: 500;">Models</div>
+            <div>
+                <input type="radio" id="mode1" name="mode" value="intro" class="radio-label" checked>
+                <label for="mode1">Defect Introduction</label><br>
+            </div>
+            <div>
+                <input type="radio" id="mode2" name="mode" value="remove" class="radio-label">
+                <label for="mode2">Defect Removal</label><br>  
+            </div>
+        </div>
+        <div class="inner-container">
+            <div class="left-block">
+                <form id="intro-form">
+                    <div class="intro-box">
+                        <div class="intro-box-text">
+                            <div>Requirements</div>
+                            <div>Design</div>
+                            <div>Coding</div>
+                        </div>
+                        <div class="intro-box-input">
+                            <div class="intro-box-input-inner">
+                                <div style="margin-right: 5%;" class="showing-text">
+                                    A:<span class="hidden-text">Calibration constant</span>
+                                </div>
+                                <input type="number" id="introReqA" name="introReqA" value="2.5">
+                            </div>
+                            <div class="intro-box-input-inner">
+                                <div style="margin-right: 5%;" class="showing-text">
+                                    A:<span class="hidden-text">Calibration constant</span>
+                                </div>
+                                <input type="number" id="introDesA" name="introDesA" value="2.5">
+                            </div>
+                            <div class="intro-box-input-inner">
+                                <div style="margin-right: 5%;" class="showing-text">
+                                    A:<span class="hidden-text">Calibration constant</span>
+                                </div>
+                                <input type="number" id="introCodA" name="introCodA" value="2.5">
+                            </div>
+                        </div>
+                        <div class="intro-box-input">
+                            <div class="intro-box-input-inner" style="margin-top: 12%;">
+                                <div style="margin-right: 4%;">Size:</div>
+                                <input type="number" id="introReqSize" name="introReqSize">
+                            </div>
+                            <div class="intro-box-input-inner" style="margin-top: 12%;">
+                                <div style="margin-right: 4%;">Size:</div>
+                                <input type="number" id="introDesSize" name="introDesSize">
+                            </div>
+                            <div class="intro-box-input-inner" style="margin-top: 12%;">
+                                <div style="margin-right: 4%;">Size:</div>
+                                <input type="number" id="introCodSize" name="introCodSize">
+                            </div>
+                        </div>
+                        <div class="intro-box-choice">
+                            <div>Unit:</div>
+                            <select id="introReqUni" style="border: 1px solid #B8B8B8; padding: 2%;">
+                                <option value="KLOC" selected>KLOC</option>
+                                <option value="FP">FP</option>
+                            </select>
+                        </div>
+                        <div class="intro-box-choice" >
+                            <div>Language: </div>
+                            <select id="introReqLang" style="border: 1px solid #B8B8B8; padding: 2%;">
+                                <option value="71" selected>Ada</option>
+                                <option value="49">AI Shell</option>
+                                <option value="32">APL</option>
+                                <option value="320">Assembly</option>
+                                <option value="213">Assembly (Macro)</option>
+                                <option value="64">ANSI/QUICK/Turbo Basic</option>
+                                <option value="91">Basic - Compiled</option>
+                                <option value="128">Basic - Interpreted</option>
+                                <option value="128">C</option>
+                                <option value="29">C++</option>
+                                <option value="91">ANSI Cobol 85</option>
+                                <option value="105">Fortan 77</option>
+                                <option value="64">Forth</option>
+                                <option value="105">Jovial</option>
+                                <option value="64">Lisp</option>
+                                <option value="80">Modula 2</option>
+                                <option value="91">Pascal</option>
+                                <option value="64">Prolog</option>
+                                <option value="80">Report Generator</option>
+                                <option value="6">Spreadsheet</option>
+                            </select>
+                        </div>
+                        <div class="intro-box-input">
+                            <div class="intro-box-input-inner">
+                                <div style="margin-right: 5%;" class="showing-text">
+                                    B:
+                                    <span class="hidden-text">Economies/ Diseconomies of Scale</span>
+                                </div>
+                                <input type="number" id="introReqB" name="introReqB" value="1">
+                            </div>
+                            <div class="intro-box-input-inner">
+                                <div style="margin-right: 5%;" class="showing-text">
+                                    B:
+                                    <span class="hidden-text">Economies/ Diseconomies of Scale</span>
+                                </div>
+                                <input type="number" id="introDesB" name="introDesB" value="1">
+                            </div>
+                            <div class="intro-box-input-inner">
+                                <div style="margin-right: 5%;" class="showing-text">
+                                    B:
+                                    <span class="hidden-text">Economies/ Diseconomies of Scale</span>
+                                </div>
+                                <input type="number" id="introCodB" name="introCodB" value="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="note">
+                        Note: According to the papers, COCOMO II Model Definition Manual suggested that A (multiplication calibration constant of COCOMO II) is initially set to 2.5 (p.48) and Modeling software defect introduction and removal: COQUALMO (Constructive Quality Model) stated that B is initially set to 1 and accounts for economies/ diseconomies of scale (p.4)
+                    </div>
+                    <div style="text-align: center; font-weight: 500;margin-top: 4%;margin-bottom: 2%;">
+                        Defect Introduction Drivers
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                        <div style="font-weight: 500;">Artifact Type</div>
+                        <div>
+                            <input type="radio" id="driver1" name="introDriverMode" value="requirements" class="radio-label" checked>
+                            <label for="driver1">Requirements</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="driver2" name="introDriverMode" value="design" class="radio-label">
+                            <label for="driver2">Design</label>  
+                        </div>
+                        <div>
+                            <input type="radio" id="driver3" name="introDriverMode" value="coding" class="radio-label">
+                            <label for="driver3">Coding</label>  
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 4%; margin-bottom: 2%;">
+                        <div style="color:#B73535;">
+                            VL = Very Low &nbsp&nbsp
+                            L = Low &nbsp&nbsp
+                            N = Nominal &nbsp&nbsp
+                            H = High &nbsp&nbsp
+                            VH = Very High&nbsp&nbsp
+                            EH = Extra High 
+                        </div>
+                    </div>
+                    <div class="intro-driver-container">
+                        <div class="intro-driver-left">
+                            <div style="font-weight: 500;">Platform</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1%;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%;width: 40%;">
+                                    <div style="margin-top: 1%">Required Software Reliability (RELY)</div>
+                                    <div style="margin-top: 1%">Data Base Size (DATA)</div>
+                                    <div style="margin-top: 1%">Required Reusability (RUSE)</div>
+                                    <div style="margin-top: 1%">Documentation Match to Life-Cycle Needs (DOCU)</div>
+                                    <div style="margin-top: 1%">Product Complexity (CPLX)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-plat-rely1" name="reqRely" value="1.43" class="radio-label">
+                                        <label for="req-plat-rely1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-data1" name="reqData" value="1.43" class="radio-label">
+                                        <label for="req-plat-data1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-ruse1" name="reqRuse" value="" class="radio-label" disabled>
+                                        <label for="req-plat-ruse1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-docu1" name="reqDocu" value="1.16" class="radio-label">
+                                        <label for="req-plat-docu1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-cplx1" name="reqCplx" value="0.76" class="radio-label">
+                                        <label for="req-plat-cplx1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-plat-rely2" name="reqRely" value="1.2" class="radio-label">
+                                        <label for="req-plat-rely2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-data2" name="reqData" value="1.2" class="radio-label">
+                                        <label for="req-plat-data2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-ruse2" name="reqRuse" value="0.95" class="radio-label">
+                                        <label for="req-plat-ruse2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-docu2" name="reqDocu" value="1.08" class="radio-label">
+                                        <label for="req-plat-docu2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-cplx2" name="reqCplx" value="0.87" class="radio-label">
+                                        <label for="req-plat-cplx2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-plat-rely3" name="reqRely" value="1" class="radio-label" checked>
+                                        <label for="req-plat-rely3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-data3" name="reqData" value="1" class="radio-label" checked>
+                                        <label for="req-plat-data3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-ruse3" name="reqRuse" value="1" class="radio-label" checked>
+                                        <label for="req-plat-ruse3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-docu3" name="reqDocu" value="1" class="radio-label" checked>
+                                        <label for="req-plat-docu3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-cplx3" name="reqCplx" value="1" class="radio-label" checked>
+                                        <label for="req-plat-cplx3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-plat-rely4" name="reqRely" value="0.84" class="radio-label">
+                                        <label for="req-plat-rely4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-data4" name="reqData" value="0.84" class="radio-label">
+                                        <label for="req-plat-data4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-ruse4" name="reqRuse" value="1.02" class="radio-label">
+                                        <label for="req-plat-ruse4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-docu4" name="reqDocu" value="0.93" class="radio-label">
+                                        <label for="req-plat-docu4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-cplx4" name="reqCplx" value="1.1" class="radio-label">
+                                        <label for="req-plat-cplx4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-plat-rely5" name="reqRely" value="0.7" class="radio-label">
+                                        <label for="req-plat-rely5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-data5" name="reqData" value="0.7" class="radio-label">
+                                        <label for="req-plat-data5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-ruse5" name="reqRuse" value="1.02" class="radio-label">
+                                        <label for="req-plat-ruse5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-docu5" name="reqDocu" value="0.86" class="radio-label">
+                                        <label for="req-plat-docu5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-cplx5" name="reqCplx" value="1.15" class="radio-label">
+                                        <label for="req-plat-cplx5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-plat-rely6" name="reqRely" value="" class="radio-label" disabled>
+                                        <label for="req-plat-rely6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-data6" name="reqData" value="" class="radio-label" disabled>
+                                        <label for="req-plat-data6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-ruse6" name="reqRuse" value="1.05" class="radio-label">
+                                        <label for="req-plat-ruse6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-docu6" name="reqDocu" value="" class="radio-label" disabled>
+                                        <label for="req-plat-docu6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-cplx6" name="reqCplx" value="1.32" class="radio-label">
+                                        <label for="req-plat-cplx6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 500; margin-top: 2%; margin-bottom: 1%;">Product</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%; width: 40%">
+                                    <div style="margin-top: 1%">Execution Time Constraint (TIME)</div>
+                                    <div style="margin-top: 1%">Main Storage Constraint (STOR)</div>
+                                    <div style="margin-top: 1%">Platform Volatility (PVOL)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-pro-time1" name="reqTime" value="" class="radio-label" disabled>
+                                        <label for="req-pro-time1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-pro-stor1" name="reqStor" value="" class="radio-label" disabled>
+                                        <label for="req-pro-stor1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-pro-pvol1" name="reqPvol" value="" class="radio-label" disabled>
+                                        <label for="req-pro-pvol1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-pro-time2" name="reqTime" value="" class="radio-label" disabled>
+                                        <label for="req-pro-time2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-pro-stor2" name="reqStor" value="" class="radio-label" disabled>
+                                        <label for="req-pro-stor2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-pro-pvol2" name="reqPvol" value="0.86" class="radio-label">
+                                        <label for="req-pro-pvol2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-pro-time3" name="reqTime" value="1" class="radio-label" checked>
+                                        <label for="req-pro-time3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-pro-stor3" name="reqStor" value="1" class="radio-label" checked>
+                                        <label for="req-pro-stor3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-pro-pvol3" name="reqPvol" value="1" class="radio-label" checked>
+                                        <label for="req-pro-pvol3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-pro-time4" name="reqTime" value="1.03" class="radio-label">
+                                        <label for="req-pro-time4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-pro-stor4" name="reqStor" value="1.03" class="radio-label">
+                                        <label for="req-pro-stor4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-pro-pvol4" name="reqPvol" value="1.08" class="radio-label">
+                                        <label for="req-pro-pvol4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-pro-time5" name="reqTime" value="1.04" class="radio-label">
+                                        <label for="req-pro5-time">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-pro-stor5" name="reqStor" value="1.04" class="radio-label">
+                                        <label for="req-drot-stor">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-rrot-pvol5" name="reqPvol" value="1.16" class="radio-label">
+                                        <label for="req-rrot-pvol5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-pro-time6" name="reqTime" value="1.08" class="radio-label">
+                                        <label for="req-pro6-time">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-pro-stor6" name="reqStor" value="1.08" class="radio-label">
+                                        <label for="req-drot-stor6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-rrot-pvol6" name="reqPvol" value="" class="radio-label" disabled>
+                                        <label for="req-rrot-pvol6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 500; margin-top: 2%">Personnel</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1%;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%;width: 40%;">
+                                    <div style="margin-top: 1%;">Analyst Capability (ACAP)</div>
+                                    <div style="margin-top: 1%;">Programmer Capability (PCAP)</div>
+                                    <div style="margin-top: 1%;">Applications Experience (AEXP)</div>
+                                    <div style="margin-top: 1%;">Platform Experience (PEXP)</div>
+                                    <div style="margin-top: 1%;">Language and Tool Experience (LTEX)</div>
+                                    <div style="margin-top: 1%;">Personnel Continuity (PCON)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-per-acap1" name="reqAcap" value="1.33" class="radio-label">
+                                        <label for="req-per-acap1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcap1" name="reqPcap" value="1" class="radio-label">
+                                        <label for="req-per-pcap1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-aexp1" name="reqAexp" value="1.24" class="radio-label">
+                                        <label for="req-per-aexp1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pexp1" name="reqPexp" value="1.11" class="radio-label">
+                                        <label for="req-per-pexp1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-Ltex1" name="reqLtex" value="1.07" class="radio-label">
+                                        <label for="req-perLtex1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcon1" name="reqPcon" value="1.22" class="radio-label">
+                                        <label for="req-per-pcon1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-per-acap2" name="reqAcap" value="1.15" class="radio-label">
+                                        <label for="req-per-acap2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcap2" name="reqPcap" value="1" class="radio-label">
+                                        <label for="req-per-pcap2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-aexp2" name="reqAexp" value="1.11" class="radio-label">
+                                        <label for="req-per-aexp2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pexp2" name="reqPexp" value="1.05" class="radio-label">
+                                        <label for="req-per-pexp2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-Ltex2" name="reqLtex" value="1.03" class="radio-label">
+                                        <label for="req-perLtex2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcon2" name="reqPcon" value="1.1" class="radio-label">
+                                        <label for="req-per-pcon2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-per-acap3" name="reqAcap" value="1" class="radio-label" checked>
+                                        <label for="req-per-acap3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcap3" name="reqPcap" value="1" class="radio-label" checked>
+                                        <label for="req-per-pcap3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-aexp3" name="reqAexp" value="1" class="radio-label" checked>
+                                        <label for="req-per-aexp3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pexp3" name="reqPexp" value="1" class="radio-label" checked>
+                                        <label for="req-per-pexp3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-Ltex3" name="reqLtex" value="1" class="radio-label" checked>
+                                        <label for="req-perLtex3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcon3" name="reqPcon" value="1" class="radio-label" checked>
+                                        <label for="req-per-pcon3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-per-acap4" name="reqAcap" value="0.87" class="radio-label">
+                                        <label for="req-per-acap4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcap4" name="reqPcap" value="1" class="radio-label">
+                                        <label for="req-per-pcap4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-aexp4" name="reqAexp" value="0.9" class="radio-label">
+                                        <label for="req-per-aexp4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pexp4" name="reqPexp" value="0.95" class="radio-label">
+                                        <label for="req-per-pexp4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-Ltex4" name="reqLtex" value="0.96" class="radio-label">
+                                        <label for="req-perLtex4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcon4" name="reqPcon" value="0.91" class="radio-label">
+                                        <label for="req-per-pcon4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-per-acap5" name="reqAcap" value="0.75" class="radio-label">
+                                        <label for="req-per-acap5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcap5" name="reqPcap" value="1" class="radio-label">
+                                        <label for="req-per-pcap5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-aexp5" name="reqAexp" value="0.81" class="radio-label">
+                                        <label for="req-per-aexp5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pexp5" name="reqPexp" value="0.9" class="radio-label">
+                                        <label for="req-per-pexp5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-Ltex5" name="reqLtex" value="0.93" class="radio-label">
+                                        <label for="req-perLtex5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcon5" name="reqPcon" value="0.82" class="radio-label">
+                                        <label for="req-per-pcon5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-per-acap6" name="reqAcap" value="" class="radio-label" disabled>
+                                        <label for="req-per-acap6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcap6" name="reqPcap" value="" class="radio-label" disabled>
+                                        <label for="req-per-pcap6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-aexp6" name="reqAexp" value="" class="radio-label" disabled>
+                                        <label for="req-per-aexp6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pexp6" name="reqPexp" value="" class="radio-label" disabled>
+                                        <label for="req-per-pexp6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-plat-Ltex6" name="reqLtex" value="" class="radio-label" disabled>
+                                        <label for="req-perLtex6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-per-pcon6" name="reqPcon" value="" class="radio-label" disabled>
+                                        <label for="req-per-pcon6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 500; margin-top: 2%">Project</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1%;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%;width: 40%;">
+                                    <div style="margin-top: 1%;">Use of Software Tools (TOOL)</div>
+                                    <div style="margin-top: 1%;">Multisite Development (SITE)</div>
+                                    <div style="margin-top: 1%;">Required Development Schedule (SCED)</div>
+                                    <div style="margin-top: 1%;">Disciplined Methods (DISC)</div>
+                                    <div style="margin-top: 1%;">Precedentedness (PREC)</div>
+                                    <div style="margin-top: 1%;">Architecture/Risk Resolution (RESL)</div>
+                                    <div style="margin-top: 1%;">Team Cohesion (TEAM)</div>
+                                    <div style="margin-top: 1%;">Process Maturity (PMAT)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-proj-tool1" name="reqTool" value="1.09" class="radio-label">
+                                        <label for="req-proj-tool1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-site1" name="reqSite" value="1.2" class="radio-label">
+                                        <label for="req-proj-site1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-sced1" name="reqSced" value="1.18" class="radio-label">
+                                        <label for="req-proj-sced1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-disc1" name="reqDisc" value="1.58" class="radio-label">
+                                        <label for="req-proj-disc1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-prec1" name="reqPrec" value="1.43" class="radio-label">
+                                        <label for="req-proj-prec1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-resl1" name="reqResl" value="1.32" class="radio-label">
+                                        <label for="req-proj-resl1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-team1" name="reqTeam" value="1.34" class="radio-label">
+                                        <label for="req-proj-team1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-pmat1" name="reqPmat" value="1.38" class="radio-label">
+                                        <label for="req-proj-pmat1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-proj-tool2" name="reqTool" value="1.04" class="radio-label">
+                                        <label for="req-proj-tool2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-site2" name="reqSite" value="1.1" class="radio-label">
+                                        <label for="req-proj-site2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-sced2" name="reqSced" value="1.09" class="radio-label">
+                                        <label for="req-proj-sced2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-disc2" name="reqDisc" value="1.26" class="radio-label">
+                                        <label for="req-proj-disc2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-prec2" name="reqPrec" value="1.2" class="radio-label">
+                                        <label for="req-proj-prec2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-resl2" name="reqResl" value="1.15" class="radio-label">
+                                        <label for="req-proj-resl2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-team2" name="reqTeam" value="1.16" class="radio-label">
+                                        <label for="req-proj-team2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-pmat2" name="reqPmat" value="1.17" class="radio-label">
+                                        <label for="req-proj-pmat2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-proj-tool3" name="reqTool" value="1" class="radio-label" checked>
+                                        <label for="req-proj-tool3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-site3" name="reqSite" value="1" class="radio-label" checked>
+                                        <label for="req-proj-site3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-sced3" name="reqSced" value="1" class="radio-label" checked>
+                                        <label for="req-proj-sced3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-disc3" name="reqDisc" value="1" class="radio-label" checked>
+                                        <label for="req-proj-disc3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-prec3" name="reqPrec" value="1" class="radio-label" checked>
+                                        <label for="req-proj-prec3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-resl3" name="reqResl" value="1" class="radio-label" checked>
+                                        <label for="req-proj-resl3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-team3" name="reqTeam" value="1" class="radio-label" checked>
+                                        <label for="req-proj-team3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-pmat3" name="reqPmat" value="1" class="radio-label" checked>
+                                        <label for="req-proj-pmat3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-proj-tool4" name="reqTool" value="0.96" class="radio-label">
+                                        <label for="req-proj-tool4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-site4" name="reqSite" value="0.94" class="radio-label">
+                                        <label for="req-proj-site4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-sced4" name="reqSced" value="0.92" class="radio-label">
+                                        <label for="req-proj-sced4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-disc4" name="reqDisc" value="0.79" class="radio-label">
+                                        <label for="req-proj-disc4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-prec4" name="reqPrec" value="0.7" class="radio-label">
+                                        <label for="req-proj-prec4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-resl4" name="reqResl" value="0.91" class="radio-label">
+                                        <label for="req-proj-resl4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-team4" name="reqTeam" value="0.91" class="radio-label">
+                                        <label for="req-proj-team4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-pmat4" name="reqPmat" value="0.9" class="radio-label">
+                                        <label for="req-proj-pmat4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-proj-tool5" name="reqTool" value="0.92" class="radio-label">
+                                        <label for="req-proj-tool5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-site5" name="reqSite" value="0.91" class="radio-label">
+                                        <label for="req-proj-site5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-sced5" name="reqSced" value="0.85" class="radio-label">
+                                        <label for="req-proj-sced5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-disc5" name="reqDisc" value="0.63" class="radio-label">
+                                        <label for="req-proj-disc5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-prec5" name="reqPrec" value="0.89" class="radio-label">
+                                        <label for="req-proj-prec5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-resl5" name="reqResl" value="0.87" class="radio-label">
+                                        <label for="req-proj-resl5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-team5" name="reqTeam" value="0.87" class="radio-label">
+                                        <label for="req-proj-team5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-pmat5" name="reqPmat" value="0.85" class="radio-label">
+                                        <label for="req-proj-pmat5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="req-proj-tool6" name="reqTool" value="" class="radio-label" disabled>
+                                        <label for="req-proj-tool6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-site6" name="reqSite" value="0.83" class="radio-label">
+                                        <label for="req-proj-site6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-sced6" name="reqSced" value="" class="radio-label" disabled>
+                                        <label for="req-proj-sced6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-disc6" name="reqDisc" value="" class="radio-label" disabled>
+                                        <label for="req-proj-disc6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-prec6" name="reqPrec" value="0.84" class="radio-label">
+                                        <label for="req-proj-prec6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-resl6" name="reqResl" value="0.76" class="radio-label">
+                                        <label for="req-proj-resl6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-team6" name="reqTeam" value="0.75" class="radio-label">
+                                        <label for="req-proj-team6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="req-proj-pmat6" name="reqPmat" value="0.73" class="radio-label">
+                                        <label for="req-proj-pmat6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="intro-driver-right">
+                            <div style="font-weight: 500;">Platform</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1%;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%;width: 40%;">
+                                    <div style="margin-top: 1%;">Required Software Reliability (RELY)</div>
+                                    <div style="margin-top: 1%;">Data Base Size (DATA)</div>
+                                    <div style="margin-top: 1%;">Required Reusability (RUSE)</div>
+                                    <div style="margin-top: 1%;">Documentation Match to Life-Cycle Needs (DOCU)</div>
+                                    <div style="margin-top: 1%;">Product Complexity (CPLX)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-plat-rely1" name="codingRely" value="1.45" class="radio-label">
+                                        <label for="coding-plat-rely1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-data1" name="codingData" value="1.45" class="radio-label">
+                                        <label for="coding-plat-data1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-ruse1" name="codingRuse" value="" class="radio-label" disabled>
+                                        <label for="coding-plat-ruse1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-docu1" name="codingDocu" value="1.18" class="radio-label">
+                                        <label for="coding-plat-docu1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-cplx1" name="codingCplx" value="0.71" class="radio-label">
+                                        <label for="coding-plat-cplx1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-plat-rely2" name="codingRely" value="1.2" class="radio-label">
+                                        <label for="coding-plat-rely2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-data2" name="codingData" value="1.2" class="radio-label">
+                                        <label for="coding-plat-data2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-ruse2" name="codingRuse" value="0.98" class="radio-label">
+                                        <label for="coding-plat-ruse2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-docu2" name="codingDocu" value="1.09" class="radio-label">
+                                        <label for="coding-plat-docu2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-cplx2" name="codingCplx" value="0.84" class="radio-label">
+                                        <label for="coding-plat-cplx2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-plat-rely3" name="codingRely" value="1" class="radio-label" checked>
+                                        <label for="coding-plat-rely3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-data3" name="codingData" value="1" class="radio-label" checked>
+                                        <label for="coding-plat-data3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-ruse3" name="codingRuse" value="1" class="radio-label" checked>
+                                        <label for="coding-plat-ruse3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-docu3" name="codingDocu" value="1" class="radio-label" checked>
+                                        <label for="coding-plat-docu3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-cplx3" name="codingCplx" value="1" class="radio-label" checked>
+                                        <label for="coding-plat-cplx3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-plat-rely4" name="codingRely" value="0.83" class="radio-label">
+                                        <label for="coding-plat-rely4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-data4" name="codingData" value="0.83" class="radio-label">
+                                        <label for="coding-plat-data4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-ruse4" name="codingRuse" value="1" class="radio-label">
+                                        <label for="coding-plat-ruse4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-docu4" name="codingDocu" value="0.92" class="radio-label">
+                                        <label for="coding-plat-docu4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-cplx4" name="codingCplx" value="1.12" class="radio-label">
+                                        <label for="coding-plat-cplx4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-plat-rely5" name="codingRely" value="0.69" class="radio-label">
+                                        <label for="coding-plat-rely5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-data5" name="codingData" value="0.69" class="radio-label">
+                                        <label for="coding-plat-data5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-ruse5" name="codingRuse" value="1" class="radio-label">
+                                        <label for="coding-plat-ruse5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-docu5" name="codingDocu" value="0.85" class="radio-label">
+                                        <label for="coding-plat-docu5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-cplx5" name="codingCplx" value="1.19" class="radio-label">
+                                        <label for="coding-plat-cplx5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-plat-rely6" name="codingRely" value="" class="radio-label" disabled>
+                                        <label for="coding-plat-rely6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-data6" name="codingData" value="" class="radio-label" disabled>
+                                        <label for="coding-plat-data6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-ruse6" name="codingRuse" value="1.02" class="radio-label">
+                                        <label for="coding-plat-ruse6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-docu6" name="codingDocu" value="" class="radio-label" disabled>
+                                        <label for="coding-plat-docu6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-cplx6" name="codingCplx" value="1.41" class="radio-label">
+                                        <label for="coding-plat-cplx6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 500; margin-top: 2%; margin-bottom: 1%;">Product</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%; width: 40%">
+                                    <div style="margin-top:1%;">Execution Time Constraint (TIME)</div>
+                                    <div style="margin-top:1%;">Main Storage Constraint (STOR)</div>
+                                    <div style="margin-top:1%;">Platform Volatility (PVOL)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-pro-time1" name="codingTime" value="" class="radio-label" disabled>
+                                        <label for="coding-pro-time1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-pro-stor1" name="codingStor" value="" class="radio-label" disabled>
+                                        <label for="coding-pro-stor1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-pro-pvol1" name="codingPvol" value="" class="radio-label" disabled>
+                                        <label for="coding-pro-pvol1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-pro-time2" name="codingTime" value="" class="radio-label" disabled>
+                                        <label for="coding-pro-time2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-pro-stor2" name="codingStor" value="" class="radio-label" disabled>
+                                        <label for="coding-pro-stor2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-pro-pvol2" name="codingPvol" value="0.89" class="radio-label">
+                                        <label for="coding-pro-pvol2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-pro-time3" name="codingTime" value="1" class="radio-label" checked>
+                                        <label for="coding-pro-time3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-pro-stor3" name="codingStor" value="1" class="radio-label" checked>
+                                        <label for="coding-pro-stor3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-pro-pvol3" name="codingPvol" value="1" class="radio-label" checked>
+                                        <label for="coding-pro-pvol3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-pro-time4" name="codingTime" value="1.06" class="radio-label">
+                                        <label for="coding-pro-time4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-pro-stor4" name="codingStor" value="1.05" class="radio-label">
+                                        <label for="coding-pro-stor4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-pro-pvol4" name="codingPvol" value="1.06" class="radio-label">
+                                        <label for="coding-pro-pvol4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <div>
+                                        <input type="radio" id="coding-pro-time5" name="codingTime" value="1.1" class="radio-label">
+                                        <label for="coding-pro5-time">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-pro-stor5" name="codingStor" value="1.07" class="radio-label">
+                                        <label for="coding-drot-stor">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-rrot-pvol5" name="codingPvol" value="1.12" class="radio-label">
+                                        <label for="coding-rrot-pvol5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <div>
+                                        <input type="radio" id="coding-pro-time6" name="codingTime" value="1.2" class="radio-label">
+                                        <label for="coding-pro6-time">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-pro-stor6" name="codingStor" value="1.15" class="radio-label">
+                                        <label for="coding-drot-stor6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-rrot-pvol6" name="codingPvol" value="" class="radio-label" disabled>
+                                        <label for="coding-rrot-pvol6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 500; margin-top: 2%">Personnel</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1%;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%;width: 40%;">
+                                    <div style="margin-top: 1%;">Analyst Capability (ACAP)</div>
+                                    <div style="margin-top: 1%;">Programmer Capability (PCAP)</div>
+                                    <div style="margin-top: 1%;">Applications Experience (AEXP)</div>
+                                    <div style="margin-top: 1%;">Platform Experience (PEXP)</div>
+                                    <div style="margin-top: 1%;">Language and Tool Experience (LTEX)</div>
+                                    <div style="margin-top: 1%;">Personnel Continuity (PCON)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-per-acap1" name="codingAcap" value="1.11" class="radio-label">
+                                        <label for="coding-per-acap1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcap1" name="codingPcap" value="1.32" class="radio-label">
+                                        <label for="coding-per-pcap1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-aexp1" name="codingAexp" value="1.13" class="radio-label">
+                                        <label for="coding-per-aexp1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pexp1" name="codingPexp" value="1.16" class="radio-label">
+                                        <label for="coding-per-pexp1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-Ltex1" name="codingLtex" value="1.22" class="radio-label">
+                                        <label for="coding-perLtex1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcon1" name="codingPcon" value="1.3" class="radio-label">
+                                        <label for="coding-per-pcon1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-per-acap2" name="codingAcap" value="1.05" class="radio-label">
+                                        <label for="coding-per-acap2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcap2" name="codingPcap" value="1.15" class="radio-label">
+                                        <label for="coding-per-pcap2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-aexp2" name="codingAexp" value="1.06" class="radio-label">
+                                        <label for="coding-per-aexp2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pexp2" name="codingPexp" value="1.08" class="radio-label">
+                                        <label for="coding-per-pexp2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-Ltex2" name="codingLtex" value="1.1" class="radio-label">
+                                        <label for="coding-perLtex2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcon2" name="codingPcon" value="1.14" class="radio-label">
+                                        <label for="coding-per-pcon2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-per-acap3" name="codingAcap" value="1" class="radio-label" checked>
+                                        <label for="coding-per-acap3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcap3" name="codingPcap" value="1" class="radio-label" checked>
+                                        <label for="coding-per-pcap3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-aexp3" name="codingAexp" value="1" class="radio-label" checked>
+                                        <label for="coding-per-aexp3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pexp3" name="codingPexp" value="1" class="radio-label" checked>
+                                        <label for="coding-per-pexp3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-Ltex3" name="codingLtex" value="1" class="radio-label" checked>
+                                        <label for="coding-perLtex3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcon3" name="codingPcon" value="1" class="radio-label" checked>
+                                        <label for="coding-per-pcon3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-per-acap4" name="codingAcap" value="0.95" class="radio-label">
+                                        <label for="coding-per-acap4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcap4" name="codingPcap" value="0.87" class="radio-label">
+                                        <label for="coding-per-pcap4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-aexp4" name="codingAexp" value="0.94" class="radio-label">
+                                        <label for="coding-per-aexp4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pexp4" name="codingPexp" value="0.93" class="radio-label">
+                                        <label for="coding-per-pexp4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-Ltex4" name="codingLtex" value="0.91" class="radio-label">
+                                        <label for="coding-perLtex4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcon4" name="codingPcon" value="0.88" class="radio-label">
+                                        <label for="coding-per-pcon4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-per-acap5" name="codingAcap" value="0.9" class="radio-label">
+                                        <label for="coding-per-acap5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcap5" name="codingPcap" value="0.76" class="radio-label">
+                                        <label for="coding-per-pcap5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-aexp5" name="codingAexp" value="0.88" class="radio-label">
+                                        <label for="coding-per-aexp5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pexp5" name="codingPexp" value="0.86" class="radio-label">
+                                        <label for="coding-per-pexp5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-Ltex5" name="codingLtex" value="0.82" class="radio-label">
+                                        <label for="coding-perLtex5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcon5" name="codingPcon" value="0.77" class="radio-label">
+                                        <label for="coding-per-pcon5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-per-acap6" name="codingAcap" value="" class="radio-label" disabled>
+                                        <label for="coding-per-acap6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcap6" name="codingPcap" value="" class="radio-label" disabled>
+                                        <label for="coding-per-pcap6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-aexp6" name="codingAexp" value="" class="radio-label" disabled>
+                                        <label for="coding-per-aexp6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pexp6" name="codingPexp" value="" class="radio-label" disabled>
+                                        <label for="coding-per-pexp6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-plat-Ltex6" name="codingLtex" value="" class="radio-label" disabled>
+                                        <label for="coding-perLtex6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-per-pcon6" name="codingPcon" value="" class="radio-label" disabled>
+                                        <label for="coding-per-pcon6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 500; margin-top: 2%">Project</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1%;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%;width: 40%;">
+                                    <div style="margin-top: 1%;">Use of Software Tools (TOOL)</div>
+                                    <div style="margin-top: 1%;">Multisite Development (SITE)</div>
+                                    <div style="margin-top: 1%;">Required Development Schedule (SCED)</div>
+                                    <div style="margin-top: 1%;">Disciplined Methods (DISC)</div>
+                                    <div style="margin-top: 1%;">Precedentedness (PREC)</div>
+                                    <div style="margin-top: 1%;">Architecture/Risk Resolution (RESL)</div>
+                                    <div style="margin-top: 1%;">Team Cohesion (TEAM)</div>
+                                    <div style="margin-top: 1%;">Process Maturity (PMAT)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-proj-tool1" name="codingTool" value="1.25" class="radio-label">
+                                        <label for="coding-proj-tool1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-site1" name="codingSite" value="1.18" class="radio-label">
+                                        <label for="coding-proj-site1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-sced1" name="codingSced" value="1.19" class="radio-label">
+                                        <label for="coding-proj-sced1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-disc1" name="codingDisc" value="1.84" class="radio-label">
+                                        <label for="coding-proj-disc1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-prec1" name="codingPrec" value="1.24" class="radio-label">
+                                        <label for="coding-proj-prec1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-resl1" name="codingResl" value="1.41" class="radio-label">
+                                        <label for="coding-proj-resl1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-team1" name="codingTeam" value="1.18" class="radio-label">
+                                        <label for="coding-proj-team1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-pmat1" name="codingPmat" value="1.58" class="radio-label">
+                                        <label for="coding-proj-pmat1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-proj-tool2" name="codingTool" value="1.12" class="radio-label">
+                                        <label for="coding-proj-tool2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-site2" name="codingSite" value="1.09" class="radio-label">
+                                        <label for="coding-proj-site2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-sced2" name="codingSced" value="1.09" class="radio-label">
+                                        <label for="coding-proj-sced2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-disc2" name="codingDisc" value="1.36" class="radio-label">
+                                        <label for="coding-proj-disc2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-prec2" name="codingPrec" value="1.11" class="radio-label">
+                                        <label for="coding-proj-prec2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-resl2" name="codingResl" value="1.19" class="radio-label">
+                                        <label for="coding-proj-resl2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-team2" name="codingTeam" value="1.09" class="radio-label">
+                                        <label for="coding-proj-team2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-pmat2" name="codingPmat" value="1.26" class="radio-label">
+                                        <label for="coding-proj-pmat2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-proj-tool3" name="codingTool" value="1" class="radio-label" checked>
+                                        <label for="coding-proj-tool3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-site3" name="codingSite" value="1" class="radio-label" checked>
+                                        <label for="coding-proj-site3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-sced3" name="codingSced" value="1" class="radio-label" checked>
+                                        <label for="coding-proj-sced3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-disc3" name="codingDisc" value="1" class="radio-label" checked>
+                                        <label for="coding-proj-disc3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-prec3" name="codingPrec" value="1" class="radio-label" checked>
+                                        <label for="coding-proj-prec3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-resl3" name="codingResl" value="1" class="radio-label" checked>
+                                        <label for="coding-proj-resl3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-team3" name="codingTeam" value="1" class="radio-label" checked>
+                                        <label for="coding-proj-team3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-pmat3" name="codingPmat" value="1" class="radio-label" checked>
+                                        <label for="coding-proj-pmat3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-proj-tool4" name="codingTool" value="0.89" class="radio-label">
+                                        <label for="coding-proj-tool4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-site4" name="codingSite" value="0.95" class="radio-label">
+                                        <label for="coding-proj-site4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-sced4" name="codingSced" value="0.92" class="radio-label">
+                                        <label for="coding-proj-sced4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-disc4" name="codingDisc" value="0.73" class="radio-label">
+                                        <label for="coding-proj-disc4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-prec4" name="codingPrec" value="0.93" class="radio-label">
+                                        <label for="coding-proj-prec4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-resl4" name="codingResl" value="0.89" class="radio-label">
+                                        <label for="coding-proj-resl4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-team4" name="codingTeam" value="0.95" class="radio-label">
+                                        <label for="coding-proj-team4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-pmat4" name="codingPmat" value="0.86" class="radio-label">
+                                        <label for="coding-proj-pmat4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-proj-tool5" name="codingTool" value="0.8" class="radio-label">
+                                        <label for="coding-proj-tool5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-site5" name="codingSite" value="0.92" class="radio-label">
+                                        <label for="coding-proj-site5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-sced5" name="codingSced" value="0.84" class="radio-label">
+                                        <label for="coding-proj-sced5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-disc5" name="codingDisc" value="0.54" class="radio-label">
+                                        <label for="coding-proj-disc5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-prec5" name="codingPrec" value="0.9" class="radio-label">
+                                        <label for="coding-proj-prec5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-resl5" name="codingResl" value="0.84" class="radio-label">
+                                        <label for="coding-proj-resl5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-team5" name="codingTeam" value="0.92" class="radio-label">
+                                        <label for="coding-proj-team5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-pmat5" name="codingPmat" value="0.79" class="radio-label">
+                                        <label for="coding-proj-pmat5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="coding-proj-tool6" name="codingTool" value="" class="radio-label" disabled>
+                                        <label for="coding-proj-tool6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-site6" name="codingSite" value="0.85" class="radio-label">
+                                        <label for="coding-proj-site6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-sced6" name="codingSced" value="" class="radio-label" disabled>
+                                        <label for="coding-proj-sced6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-disc6" name="codingDisc" value="" class="radio-label" disabled>
+                                        <label for="coding-proj-disc6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-prec6" name="codingPrec" value="0.81" class="radio-label">
+                                        <label for="coding-proj-prec6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-resl6" name="codingResl" value="0.71" class="radio-label">
+                                        <label for="coding-proj-resl6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-team6" name="codingTeam" value="0.85" class="radio-label">
+                                        <label for="coding-proj-team6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="coding-proj-pmat6" name="codingPmat" value="0.63" class="radio-label">
+                                        <label for="coding-proj-pmat6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                                
+                        <div class="intro-driver-center">
+                            <div style="font-weight: 500;">Platform</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1%;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%;width: 40%;">
+                                    <div style="margin-top: 1%;">Required Software Reliability (RELY)</div>
+                                    <div style="margin-top: 1%;">Data Base Size (DATA)</div>
+                                    <div style="margin-top: 1%;">Required Reusability (RUSE)</div>
+                                    <div style="margin-top: 1%;">Documentation Match to Life-Cycle Needs (DOCU)</div>
+                                    <div style="margin-top: 1%;">Product Complexity (CPLX)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-plat-rely1" name="designRely" value="1.45" class="radio-label">
+                                        <label for="design-plat-rely1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-data1" name="designData" value="1.45" class="radio-label">
+                                        <label for="design-plat-data1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-ruse1" name="designRuse" value="" class="radio-label" disabled>
+                                        <label for="design-plat-ruse1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-docu1" name="designDocu" value="1.18" class="radio-label">
+                                        <label for="design-plat-docu1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-cplx1" name="designCplx" value="0.71" class="radio-label">
+                                        <label for="design-plat-cplx1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-plat-rely2" name="designRely" value="1.2" class="radio-label">
+                                        <label for="design-plat-rely2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-data2" name="designData" value="1.2" class="radio-label">
+                                        <label for="design-plat-data2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-ruse2" name="designRuse" value="0.98" class="radio-label">
+                                        <label for="design-plat-ruse2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-docu2" name="designDocu" value="1.09" class="radio-label">
+                                        <label for="design-plat-docu2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-cplx2" name="designCplx" value="0.84" class="radio-label">
+                                        <label for="design-plat-cplx2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-plat-rely3" name="designRely" value="1" class="radio-label" checked>
+                                        <label for="design-plat-rely3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-data3" name="designData" value="1" class="radio-label" checked>
+                                        <label for="design-plat-data3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-ruse3" name="designRuse" value="1" class="radio-label" checked>
+                                        <label for="design-plat-ruse3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-docu3" name="designDocu" value="1" class="radio-label" checked>
+                                        <label for="design-plat-docu3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-cplx3" name="designCplx" value="1" class="radio-label" checked>
+                                        <label for="design-plat-cplx3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-plat-rely4" name="designRely" value="0.83" class="radio-label">
+                                        <label for="design-plat-rely4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-data4" name="designData" value="0.83" class="radio-label">
+                                        <label for="design-plat-data4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-ruse4" name="designRuse" value="1" class="radio-label">
+                                        <label for="design-plat-ruse4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-docu4" name="designDocu" value="0.92" class="radio-label">
+                                        <label for="design-plat-docu4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-cplx4" name="designCplx" value="1.12" class="radio-label">
+                                        <label for="design-plat-cplx4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-plat-rely5" name="designRely" value="0.69" class="radio-label">
+                                        <label for="design-plat-rely5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-data5" name="designData" value="0.69" class="radio-label">
+                                        <label for="design-plat-data5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-ruse5" name="designRuse" value="1.02" class="radio-label">
+                                        <label for="design-plat-ruse5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-docu5" name="designDocu" value="0.85" class="radio-label">
+                                        <label for="design-plat-docu5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-cplx5" name="designCplx" value="1.19" class="radio-label">
+                                        <label for="design-plat-cplx5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-plat-rely6" name="designRely" value="" class="radio-label" disabled>
+                                        <label for="design-plat-rely6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-data6" name="designData" value="" class="radio-label" disabled>
+                                        <label for="design-plat-data6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-ruse6" name="designRuse" value="1.02" class="radio-label">
+                                        <label for="design-plat-ruse6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-docu6" name="designDocu" value="" class="radio-label" disabled>
+                                        <label for="design-plat-docu6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-cplx6" name="designCplx" value="1.41" class="radio-label">
+                                        <label for="design-plat-cplx6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 500; margin-top: 2%; margin-bottom: 1%;">Product</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%; width: 40%">
+                                    <div style="margin-top: 1%;">Execution Time Constraint (TIME)</div>
+                                    <div style="margin-top: 1%;">Main Storage Constraint (STOR)</div>
+                                    <div style="margin-top: 1%;">Platform Volatility (PVOL)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-pro-time1" name="designTime" value="" class="radio-label" disabled>
+                                        <label for="design-pro-time1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-pro-stor1" name="designStor" value="" class="radio-label" disabled>
+                                        <label for="design-pro-stor1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-pro-pvol1" name="designPvol" value="" class="radio-label" disabled>
+                                        <label for="design-pro-pvol1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-pro-time2" name="designTime" value="" class="radio-label" disabled>
+                                        <label for="design-pro-time2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-pro-stor2" name="designStor" value="" class="radio-label" disabled>
+                                        <label for="design-pro-stor2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-pro-pvol2" name="designPvol" value="0.83" class="radio-label">
+                                        <label for="design-pro-pvol2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-pro-time3" name="designTime" value="1" class="radio-label" checked>
+                                        <label for="design-pro-time3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-pro-stor3" name="designStor" value="1" class="radio-label" checked>
+                                        <label for="design-pro-stor3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-pro-pvol3" name="designPvol" value="1" class="radio-label" checked>
+                                        <label for="design-pro-pvol3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-pro-time4" name="designTime" value="1.06" class="radio-label">
+                                        <label for="design-pro-time4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-pro-stor4" name="designStor" value="1.06" class="radio-label">
+                                        <label for="design-pro-stor4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-pro-pvol4" name="designPvol" value="1.11" class="radio-label">
+                                        <label for="design-pro-pvol4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-pro-time5" name="designTime" value="1.1" class="radio-label">
+                                        <label for="design-pro5-time">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-pro-stor5" name="designStor" value="1.09" class="radio-label">
+                                        <label for="design-drot-stor">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-rrot-pvol5" name="designPvol" value="1.2" class="radio-label">
+                                        <label for="design-rrot-pvol5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-pro-time6" name="designTime" value="1.2" class="radio-label">
+                                        <label for="design-pro6-time">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-pro-stor6" name="designStor" value="1.18" class="radio-label">
+                                        <label for="design-drot-stor6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-rrot-pvol6" name="designPvol" value="" class="radio-label" disabled>
+                                        <label for="design-rrot-pvol6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 500; margin-top: 2%">Personnel</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1%;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%;width: 40%;">
+                                    <div style="margin-top: 1%;">Analyst Capability (ACAP)</div>
+                                    <div style="margin-top: 1%;">Programmer Capability (PCAP)</div>
+                                    <div style="margin-top: 1%;">Applications Experience (AEXP)</div>
+                                    <div style="margin-top: 1%;">Platform Experience (PEXP)</div>
+                                    <div style="margin-top: 1%;">Language and Tool Experience (LTEX)</div>
+                                    <div style="margin-top: 1%;">Personnel Continuity (PCON)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-per-acap1" name="designAcap" value="1.02" class="radio-label">
+                                        <label for="design-per-acap1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcap1" name="designPcap" value="1.17" class="radio-label">
+                                        <label for="design-per-pcap1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-aexp1" name="designAexp" value="1.22" class="radio-label">
+                                        <label for="design-per-aexp1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pexp1" name="designPexp" value="1.17" class="radio-label">
+                                        <label for="design-per-pexp1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-Ltex1" name="designLtex" value="1.13" class="radio-label">
+                                        <label for="design-perLtex1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcon1" name="designPcon" value="1.25" class="radio-label">
+                                        <label for="design-per-pcon1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-per-acap2" name="designAcap" value="1.1" class="radio-label">
+                                        <label for="design-per-acap2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcap2" name="designPcap" value="1.08" class="radio-label">
+                                        <label for="design-per-pcap2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-aexp2" name="designAexp" value="1.1" class="radio-label">
+                                        <label for="design-per-aexp2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pexp2" name="designPexp" value="1.08" class="radio-label">
+                                        <label for="design-per-pexp2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-Ltex2" name="designLtex" value="1.06" class="radio-label">
+                                        <label for="design-perLtex2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcon2" name="designPcon" value="1.12" class="radio-label">
+                                        <label for="design-per-pcon2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-per-acap3" name="designAcap" value="1" class="radio-label" checked>
+                                        <label for="design-per-acap3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcap3" name="designPcap" value="1" class="radio-label" checked>
+                                        <label for="design-per-pcap3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-aexp3" name="designAexp" value="1" class="radio-label" checked>
+                                        <label for="design-per-aexp3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pexp3" name="designPexp" value="1" class="radio-label" checked>
+                                        <label for="design-per-pexp3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-Ltex3" name="designLtex" value="1" class="radio-label" checked>
+                                        <label for="design-perLtex3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcon3" name="designPcon" value="1" class="radio-label" checked>
+                                        <label for="design-per-pcon3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-per-acap4" name="designAcap" value="0.91" class="radio-label">
+                                        <label for="design-per-acap4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcap4" name="designPcap" value="0.92" class="radio-label">
+                                        <label for="design-per-pcap4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-aexp4" name="designAexp" value="0.91" class="radio-label">
+                                        <label for="design-per-aexp4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pexp4" name="designPexp" value="0.93" class="radio-label">
+                                        <label for="design-per-pexp4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-Ltex4" name="designLtex" value="0.94" class="radio-label">
+                                        <label for="design-perLtex4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcon4" name="designPcon" value="0.89" class="radio-label">
+                                        <label for="design-per-pcon4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-per-acap5" name="designAcap" value="0.83" class="radio-label">
+                                        <label for="design-per-acap5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcap5" name="designPcap" value="0.85" class="radio-label">
+                                        <label for="design-per-pcap5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-aexp5" name="designAexp" value="0.82" class="radio-label">
+                                        <label for="design-per-aexp5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pexp5" name="designPexp" value="0.86" class="radio-label">
+                                        <label for="design-per-pexp5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-Ltex5" name="designLtex" value="0.88" class="radio-label">
+                                        <label for="design-perLtex5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcon5" name="designPcon" value="0.8" class="radio-label">
+                                        <label for="design-per-pcon5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-per-acap6" name="designAcap" value="" class="radio-label" disabled>
+                                        <label for="design-per-acap6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcap6" name="designPcap" value="" class="radio-label" disabled>
+                                        <label for="design-per-pcap6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-aexp6" name="designAexp" value="" class="radio-label" disabled>
+                                        <label for="design-per-aexp6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pexp6" name="designPexp" value="" class="radio-label" disabled>
+                                        <label for="design-per-pexp6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-plat-Ltex6" name="designLtex" value="" class="radio-label" disabled>
+                                        <label for="design-perLtex6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-per-pcon6" name="designPcon" value="" class="radio-label" disabled>
+                                        <label for="design-per-pcon6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 500; margin-top: 2%">Project</div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1%;">
+                                <div style="display: flex; flex-direction: column; margin-left: 2%;width: 40%;">
+                                    <div style="margin-top: 1%;">Use of Software Tools (TOOL)</div>
+                                    <div style="margin-top: 1%;">Multisite Development (SITE)</div>
+                                    <div style="margin-top: 1%;">Required Development Schedule (SCED)</div>
+                                    <div style="margin-top: 1%;">Disciplined Methods (DISC)</div>
+                                    <div style="margin-top: 1%;">Precedentedness (PREC)</div>
+                                    <div style="margin-top: 1%;">Architecture/Risk Resolution (RESL)</div>
+                                    <div style="margin-top: 1%;">Team Cohesion (TEAM)</div>
+                                    <div style="margin-top: 1%;">Process Maturity (PMAT)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-proj-tool1" name="designTool" value="1.1" class="radio-label">
+                                        <label for="design-proj-tool1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-site1" name="designSite" value="1.18" class="radio-label">
+                                        <label for="design-proj-site1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-sced1" name="designSced" value="1.19" class="radio-label">
+                                        <label for="design-proj-sced1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-disc1" name="designDisc" value="1.67" class="radio-label">
+                                        <label for="design-proj-disc1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-prec1" name="designPrec" value="1.34" class="radio-label">
+                                        <label for="design-proj-prec1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-resl1" name="designResl" value="1.43" class="radio-label">
+                                        <label for="design-proj-resl1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-team1" name="designTeam" value="1.26" class="radio-label">
+                                        <label for="design-proj-team1">VL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-pmat1" name="designPmat" value="1.65" class="radio-label">
+                                        <label for="design-proj-pmat1">VL</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-proj-tool2" name="designTool" value="1.05" class="radio-label">
+                                        <label for="design-proj-tool2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-site2" name="designSite" value="1.09" class="radio-label">
+                                        <label for="design-proj-site2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-sced2" name="designSced" value="1.09" class="radio-label">
+                                        <label for="design-proj-sced2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-disc2" name="designDisc" value="1.29" class="radio-label">
+                                        <label for="design-proj-disc2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-prec2" name="designPrec" value="1.16" class="radio-label">
+                                        <label for="design-proj-prec2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-resl2" name="designResl" value="1.2" class="radio-label">
+                                        <label for="design-proj-resl2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-team2" name="designTeam" value="1.12" class="radio-label">
+                                        <label for="design-proj-team2">L</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-pmat2" name="designPmat" value="1.28" class="radio-label">
+                                        <label for="design-proj-pmat2">L</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-proj-tool3" name="designTool" value="1" class="radio-label" checked>
+                                        <label for="design-proj-tool3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-site3" name="designSite" value="1" class="radio-label" checked>
+                                        <label for="design-proj-site3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-sced3" name="designSced" value="1" class="radio-label" checked>
+                                        <label for="design-proj-sced3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-disc3" name="designDisc" value="1" class="radio-label" checked>
+                                        <label for="design-proj-disc3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-prec3" name="designPrec" value="1" class="radio-label" checked>
+                                        <label for="design-proj-prec3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-resl3" name="designResl" value="1" class="radio-label" checked>
+                                        <label for="design-proj-resl3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-team3" name="designTeam" value="1" class="radio-label" checked>
+                                        <label for="design-proj-team3">N</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-pmat3" name="designPmat" value="1" class="radio-label" checked>
+                                        <label for="design-proj-pmat3">N</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-proj-tool4" name="designTool" value="0.95" class="radio-label">
+                                        <label for="design-proj-tool4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-site4" name="designSite" value="0.95" class="radio-label">
+                                        <label for="design-proj-site4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-sced4" name="designSced" value="0.92" class="radio-label">
+                                        <label for="design-proj-sced4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-disc4" name="designDisc" value="0.77" class="radio-label">
+                                        <label for="design-proj-disc4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-prec4" name="designPrec" value="0.91" class="radio-label">
+                                        <label for="design-proj-prec4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-resl4" name="designResl" value="0.89" class="radio-label">
+                                        <label for="design-proj-resl4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-team4" name="designTeam" value="0.93" class="radio-label">
+                                        <label for="design-proj-team4">H</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-pmat4" name="designPmat" value="0.85" class="radio-label">
+                                        <label for="design-proj-pmat4">H</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-proj-tool5" name="designTool" value="0.91" class="radio-label">
+                                        <label for="design-proj-tool5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-site5" name="designSite" value="0.92" class="radio-label">
+                                        <label for="design-proj-site5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-sced5" name="designSced" value="0.84" class="radio-label">
+                                        <label for="design-proj-sced5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-disc5" name="designDisc" value="0.6" class="radio-label">
+                                        <label for="design-proj-disc5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-prec5" name="designPrec" value="0.87" class="radio-label">
+                                        <label for="design-proj-prec5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-resl5" name="designResl" value="0.84" class="radio-label">
+                                        <label for="design-proj-resl5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-team5" name="designTeam" value="0.9" class="radio-label">
+                                        <label for="design-proj-team5">VH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-pmat5" name="designPmat" value="0.78" class="radio-label">
+                                        <label for="design-proj-pmat5">VH</label>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                                    <div>
+                                        <input type="radio" id="design-proj-tool6" name="designTool" value="" class="radio-label" disabled>
+                                        <label for="design-proj-tool6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-site6" name="designSite" value="0.85" class="radio-label">
+                                        <label for="design-proj-site6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-sced6" name="designSced" value="" class="radio-label" disabled>
+                                        <label for="design-proj-sced6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-disc6" name="designDisc" value="" class="radio-label" disabled>
+                                        <label for="design-proj-disc6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-prec6" name="designPrec" value="0.75" class="radio-label">
+                                        <label for="design-proj-prec6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-resl6" name="designResl" value="0.7" class="radio-label">
+                                        <label for="design-proj-resl6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-team6" name="designTeam" value="0.8" class="radio-label">
+                                        <label for="design-proj-team6">EH</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="design-proj-pmat6" name="designPmat" value="0.61" class="radio-label">
+                                        <label for="design-proj-pmat6">EH</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                                
+                    </div>
+                    <div class="intro-btn">
+                        <input type="submit" value="Calculate" id="intro-calculate">
+                    </div>
+                </form>
+                <table class="intro-table">
+                    <tr>
+                        <th style="background-color: #dddddd; width: 40%;">
+                            Requirements Defects Introduced</th>
+                        <th id="introResult0" style="font-size: 400;"></th>
+                    </tr>
+                    <tr>
+                        <th style="background-color: #dddddd; width: 40%;">
+                            Design Defects Introduced</th>
+                        <th id="introResult1"></th>
+                    </tr>
+                    <tr>
+                        <th style="background-color: #dddddd; width: 40%;">
+                            Coding Defects Introduced</th>
+                        <th id="introResult2" style="font-size: 400;"></th>
+                    </tr>
+                    <tr>
+                        <th style="background-color: #dddddd; width: 40%;">
+                            Total number of defects introduced</th>
+                        <th id="totalDefectIntro" style="font-size: 400;"></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="right-block">
+                <form id="remove-form">
+                    <div style="font-weight: 500; margin-bottom: 2%;">Requirements</div>
+                    <div class="remove-container">
+                        <div class="remove-text">
+                            <div>Calibration contant (C):</div>
+                            <div>Estimated number of defects (DI Est):</div>
+                        </div>
+                        <div class="remove-input">
+                            <input type="number" id="removeInput0" name="removeInput0">
+                            <input type="number" id="removeInput1" name="removeInput1">
+                        </div>
+                    </div>
+                    <div style="margin-top: 3%; margin-bottom: 2%">
+                        <div style="color: #B73535; text-align: center;"> 
+                            VL = Very Low&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            L = Low&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            N = Nominal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            H = High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            VH = Very High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            EH = Extra High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        </div>
+                    </div>
+                    <div class="remove-container">
+                        <div class="remove-text">
+                            <div>Automated Analysis DRF:</div>
+                            <div>People Reviews DRF:</div>
+                            <div>Execution Testing and Tools DRF:</div>
+                        </div>
+                        <div class="remove-radio">
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf0-1" name="removeDrf0" value="0" class="radio-label">
+                                    <label for="remove-drf0-1">VL</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf1-1" name="removeDrf1" value="0" class="radio-label">
+                                    <label for="remove-drf1-1">VL</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf2-1" name="removeDrf2" value="0" class="radio-label">
+                                    <label for="remove-drf2-1">VL</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf0-2" name="removeDrf0" value="0" class="radio-label">
+                                    <label for="remove-drf0-2">L</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf1-2" name="removeDrf1" value="0.25" class="radio-label">
+                                    <label for="remove-drf1-2">L</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf2-2" name="removeDrf2" value="0.23" class="radio-label">
+                                    <label for="remove-drf2-2">L</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf0-3" name="removeDrf0" value="0.1" class="radio-label" checked>
+                                    <label for="remove-drf0-3">N</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf1-3" name="removeDrf1" value="0.4" class="radio-label" checked>
+                                    <label for="remove-drf1-3">N</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf2-3" name="removeDrf2" value="0.4" class="radio-label" checked>
+                                    <label for="remove-drf2-3">N</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf0-4" name="removeDrf0" value="0.27" class="radio-label">
+                                    <label for="remove-drf0-4">H</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf1-4" name="removeDrf1" value="0.5" class="radio-label">
+                                    <label for="remove-drf1-4">H</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf2-4" name="removeDrf2" value="0.5" class="radio-label">
+                                    <label for="remove-drf2-4">H</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf0-5" name="removeDrf0" value="0.34" class="radio-label">
+                                    <label for="remove-drf0-5">VH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf1-5" name="removeDrf1" value="0.58" class="radio-label">
+                                    <label for="remove-drf1-5">VH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf2-5" name="removeDrf2" value="0.57" class="radio-label">
+                                    <label for="remove-drf2-5">VH</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf0-6" name="removeDrf0" value="0.4" class="radio-label">
+                                    <label for="remove-drf0-6">EH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf1-6" name="removeDrf1" value="0.7" class="radio-label">
+                                    <label for="remove-drf1-6">EH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf2-6" name="removeDrf2" value=0.6"" class="radio-label">
+                                    <label for="remove-drf2-6">EH</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-weight: 500; margin-bottom: 2%; margin-top: 3%">Design</div>
+                    <div class="remove-container">
+                        <div class="remove-text">
+                            <div>Calibration contant (C):</div>
+                            <div>Estimated number of defects (DI Est):</div>
+                        </div>
+                        <div class="remove-input">
+                            <input type="number" id="removeInput2" name="removeInput2">
+                            <input type="number" id="removeInput3" name="removeInput3">
+                        </div>
+                    </div>
+                    <div style="margin-top: 3%; margin-bottom: 2%">
+                        <div style="color: #B73535; text-align: center;"> 
+                            VL = Very Low&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            L = Low&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            N = Nominal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            H = High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            VH = Very High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            EH = Extra High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        </div>
+                    </div>
+                    <div class="remove-container">
+                        <div class="remove-text">
+                            <div>Automated Analysis DRF:</div>
+                            <div>People Reviews DRF:</div>
+                            <div>Execution Testing and Tools DRF:</div>
+                        </div>
+                        <div class="remove-radio">
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf3-1" name="removeDrf3" value="0" class="radio-label">
+                                    <label for="remove-drf3-1">VL</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf4-1" name="removeDrf4" value="0" class="radio-label">
+                                    <label for="remove-drf4-1">VL</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf5-1" name="removeDrf5" value="0" class="radio-label">
+                                    <label for="remove-drf5-1">VL</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf3-2" name="removeDrf3" value="0" class="radio-label">
+                                    <label for="remove-drf3-2">L</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf4-2" name="removeDrf4" value="0.28" class="radio-label">
+                                    <label for="remove-drf4-2">L</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf5-2" name="removeDrf5" value="0.23" class="radio-label">
+                                    <label for="remove-drf5-2">L</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf3-3" name="removeDrf3" value="0.13" class="radio-label" checked>
+                                    <label for="remove-drf3-3">N</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf4-3" name="removeDrf4" value="0.4" class="radio-label" checked>
+                                    <label for="remove-drf4-3">N</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf5-3" name="removeDrf5" value="0.43" class="radio-label" checked>
+                                    <label for="remove-drf5-3">N</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf3-4" name="removeDrf3" value="0.28" class="radio-label">
+                                    <label for="remove-drf3-4">H</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf4-4" name="removeDrf4" value="0.54" class="radio-label">
+                                    <label for="remove-drf4-4">H</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf5-4" name="removeDrf5" value="0.54" class="radio-label">
+                                    <label for="remove-drf5-4">H</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf3-5" name="removeDrf3" value="0.44" class="radio-label">
+                                    <label for="remove-drf3-5">VH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf4-5" name="removeDrf4" value="0.7" class="radio-label">
+                                    <label for="remove-drf4-5">VH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf5-5" name="removeDrf5" value="0.65" class="radio-label">
+                                    <label for="remove-drf5-5">VH</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf3-6" name="removeDrf3" value="0.5" class="radio-label">
+                                    <label for="remove-drf3-6">EH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf4-6" name="removeDrf4" value="0.78" class="radio-label">
+                                    <label for="remove-drf4-6">EH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf5-6" name="removeDrf5" value="0.7" class="radio-label">
+                                    <label for="remove-drf5-6">EH</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-weight: 500; margin-top: 3%; margin-bottom: 2%;">Coding</div>
+                    <div class="remove-container">
+                        <div class="remove-text">
+                            <div>Calibration contant (C):</div>
+                            <div>Estimated number of defects (DI Est):</div>
+                        </div>
+                        <div class="remove-input">
+                            <input type="number" id="removeInput4" name="removeInput4">
+                            <input type="number" id="removeInput5" name="removeInput5">
+                        </div>
+                    </div>
+                    <div style="margin-top: 3%; margin-bottom: 2%">
+                        <div style="color: #B73535; text-align: center;"> 
+                            VL = Very Low&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            L = Low&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            N = Nominal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            H = High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            VH = Very High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            EH = Extra High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        </div>
+                    </div>
+                    <div class="remove-container">
+                        <div class="remove-text">
+                            <div>Automated Analysis DRF:</div>
+                            <div>People Reviews DRF:</div>
+                            <div>Execution Testing and Tools DRF:</div>
+                        </div>
+                        <div class="remove-radio">
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf6-1" name="removeDrf6" value="0" class="radio-label">
+                                    <label for="remove-drf6-1">VL</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf7-1" name="removeDrf7" value="0" class="radio-label">
+                                    <label for="remove-drf7-1">VL</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf8-1" name="removeDrf8" value="0" class="radio-label">
+                                    <label for="remove-drf8-1">VL</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf6-2" name="removeDrf6" value="0.1" class="radio-label">
+                                    <label for="remove-drf6-2">L</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf7-2" name="removeDrf7" value="0.3" class="radio-label">
+                                    <label for="remove-drf7-2">L</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf8-2" name="removeDrf8" value="0.38" class="radio-label">
+                                    <label for="remove-drf8-2">L</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf6-3" name="removeDrf6" value="0.2" class="radio-label" checked>
+                                    <label for="remove-drf6-3">N</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf7-3" name="removeDrf7" value="0.48" class="radio-label" checked>
+                                    <label for="remove-drf7-3">N</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf8-3" name="removeDrf8" value="0.58" class="radio-label" checked>
+                                    <label for="remove-drf8-3">N</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf6-4" name="removeDrf6" value="0.3" class="radio-label">
+                                    <label for="remove-drf6-4">H</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf7-4" name="removeDrf7" value="0.6" class="radio-label">
+                                    <label for="remove-drf7-4">H</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf8-4" name="removeDrf8" value="0.69" class="radio-label">
+                                    <label for="remove-drf8-4">H</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf6-5" name="removeDrf6" value="0.48" class="radio-label">
+                                    <label for="remove-drf6-5">VH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf7-5" name="removeDrf7" value="0.73" class="radio-label">
+                                    <label for="remove-drf7-5">VH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf8-5" name="removeDrf8" value="0.78" class="radio-label">
+                                    <label for="remove-drf8-5">VH</label>
+                                </div>
+                            </div>
+                            <div class="remove-radio-inner">
+                                <div>
+                                    <input type="radio" id="remove-drf6-6" name="removeDrf6" value="0.55" class="radio-label">
+                                    <label for="remove-drf6-6">EH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf7-6" name="removeDrf7" value="0.83" class="radio-label">
+                                    <label for="remove-drf7-6">EH</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="remove-drf8-6" name="removeDrf8" value="0.88" class="radio-label">
+                                    <label for="remove-drf8-6">EH</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-btn">
+                        <input type="submit" value="Calculate" id="remove-calculate">
+                    </div>
+                </form>
+                <table class="remove-table">
+                    <tr style="background-color: #dddddd;">
+                        <th style="font-weight: 500;">Automated Analysis DRF</th>
+                        <th style="font-weight: 500;">People Reviews DRF</th>
+                        <th style="font-weight: 500;">Execution Testing and Tools DRF</th>
+                        <th style="font-weight: 500;">Product (1-DRF)</th>
+                        <th style="font-weight: 500;">DI / kSLOC</th>
+                        <th style="font-weight: 700;">DRes / kSLOC</th>
+                    </tr>
+                    <tr>
+                        <th id="removeDriverResult0" style="font-weight: 400;"></th>
+                        <th id="removeDriverResult1" style="font-weight: 400;"></th>
+                        <th id="removeDriverResult2" style="font-weight: 400;"></th>
+                        <th id="removeProduct0" style="font-weight: 400;"></th>
+                        <th id="removeDI0" style="font-weight: 400;"></th>
+                        <th id="removeDRes0" style="font-weight: 400;"></th>
+                    </tr>
+                    <tr>
+                        <th id="removeDriverResult3" style="font-weight: 400;"></th>
+                        <th id="removeDriverResult4" style="font-weight: 400;"></th>
+                        <th id="removeDriverResult5" style="font-weight: 400;"></th>
+                        <th id="removeProduct1" style="font-weight: 400;"></th>
+                        <th id="removeDI1" style="font-weight: 400;"></th>
+                        <th id="removeDRes1" style="font-weight: 400;"></th>
+                    </tr>
+                    <tr>
+                        <th id="removeDriverResult6" style="font-weight: 400;"></th>
+                        <th id="removeDriverResult7" style="font-weight: 400;"></th>
+                        <th id="removeDriverResult8" style="font-weight: 400;"></th>
+                        <th id="removeProduct2" style="font-weight: 400;"></th>
+                        <th id="removeDI2" style="font-weight: 400;"></th>
+                        <th id="removeDRes2" style="font-weight: 400;"></th>
+                    </tr>
+                    <tr>
+                        <th colspan="5" style="font-weight: 400;text-align: end;">
+                            Total
+                        </th>
+                        <th id="removeTotal"></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="home">
+            <a href="./index.html" style="text-decoration: none; color: #111854;">HOME >></a>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/coqualmo.js"></script>
+</body>
+</html>

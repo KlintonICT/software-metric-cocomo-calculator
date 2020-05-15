@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reference.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>REFERENCE</title>
+    <link rel="shortcut icon" href="/assets/technology.png" />
+  </head>
+  <body>
+    <div class="container">
+        <a href="./cocomo2.html" class="back">BACK >></a>
+        <div style="font-weight: 600; font-size: 1.2rem;">Application composition model</div>
+        <table class="table table-bordered" style="margin-top: 2%;">
+            <thead>
+                <tr class="table-active">
+                  <th scope="col">
+                      <div style="display: flex; flex-direction: column; align-items: center;">
+                          <div style="font-weight: 500;">Developers’ experience and capability</div>
+                          <div style="font-weight: 500;">ICASE maturity and capability</div>
+                      </div>
+                  </th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Very Low</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Low</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Nominal</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">High</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Very High</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" style="font-weight: 400;">PROD</th>
+                    <th scope="col" style="font-weight: 400; text-align: center;">4</th>
+                    <th scope="col" style="font-weight: 400; text-align: center;">7</th>
+                    <th scope="col" style="font-weight: 400; text-align: center;">13</th>
+                    <th scope="col" style="font-weight: 400; text-align: center;">25</th>
+                    <th scope="col" style="font-weight: 400; text-align: center;">50</th>
+                </tr>
+            </tbody>
+        </table>
+        <div style="font-weight: 600; font-size: 1.2rem; margin-top: 5%;">Early design model</div>
+        <div style="font-weight: 400; color: red; margin-top: 1%; margin-bottom: 1%;">SU:</div>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-active">
+                  <th> </th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Very Low</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Low</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Nominal</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">High</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Very High</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Structure</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Very low cohesion, high coupling, spaghetti code</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Moderately low cohesion, high coupling</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Reasonably well-structure; some weak areas</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">High cohesion, low coupling</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Strong modularity, information hiding in data/control structures</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Application Clarity</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">No match between program and application</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Some correlation between program and application</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Moderate correlation between program and application</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Good correlation between program and application</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Clear match between program and application worldviews</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Self-Descriptiveness</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Obscure code; documentation missing, obscure or obsolete</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Some code commentary and headers; some useful documentation</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Moderate level of code commentary, headers, documentations</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Good code commentary and headers; useful documentation; some weak areas</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Self-descriptive code; documentation up-todate, well-organized, with design rationale</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">SU Increment to ESLOC</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">50</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">40</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">30</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">20</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">10</th>
+                </tr>
+            </tbody>
+        </table>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 2%;">
+            <div style="width: 48%; margin-right: 2%">
+                <div style="font-weight: 400; color: red; margin-bottom: 1%;">AA:</div>
+                <table class="table table-bordered" style="margin-top: 2%;">
+                    <thead>
+                        <tr class="table-active">
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">AA Increment</th>
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Level of AA Effort</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">None</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">2</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Basic module search and documentation</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">4</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Some module Test and Evaluation (T&E), documentation</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">6</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Considerable module T&E, documentation</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">8</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Extensive module T&E, documentation</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="width: 48%; margin-left: 2%">
+                <div style="font-weight: 400; color: red; margin-bottom: 1%;">UNFM:</div>
+                <table class="table table-bordered" style="margin-top: 2%;">
+                    <thead>
+                        <tr class="table-active">
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">UNFM Increment</th>
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Level of Unfamiliarity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.0</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Completely familiar</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.2</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Mostly familiar</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.4</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Somewhat familiar</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.6</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Considerably familiar</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.8</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Mostly unfamiliar</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.0</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Completely unfamiliar</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 2%;">
+            <div style="width: 48%; margin-right: 2%">
+                <div style="font-weight: 400; color: red; margin-bottom: 1%;">EM:</div>
+                <table class="table table-bordered" style="margin-top: 2%;">
+                    <thead>
+                        <tr class="table-active">
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Early Design Cost Drivers</th>
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Extra Low</th>
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Very Low</th>
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Low</th>
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Nominal</th>
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">High</th>
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Very High</th>
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Extra High</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">RCPX</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.73</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.81</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.98</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.0</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.30</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.74</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">2.38</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">RUSE</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">-</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">-</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.95</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.0</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.07</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.15</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.24</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PDIF</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">-</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">-</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.87</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.0</th>
+                            <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">1.29</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.81</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">2.61</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PERS</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">2.12</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.62</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.26</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.0</th>
+                            <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">0.83</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.63</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.50</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PREX</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.59</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.33</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.12</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.0</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.87</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.71</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.62</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">FCIL</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.43</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.30</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.10</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.0</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.87</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.73</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.62</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">SCED</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">-</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.43</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.14</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.0</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.0</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.0</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">-</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="width: 48%; margin-left: 2%">
+                <div style="font-weight: 400; color: red; margin-bottom: 1%;">AT:</div>
+                <table class="table table-bordered" style="margin-top: 2%;">
+                    <thead>
+                        <tr class="table-active">
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Re-engineering Target</th>
+                          <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">AT (% automated translation)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Batch processing</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">96%</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Batch with SORT</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">90%</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Batch with DBMS</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">88%</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Batch, SORT, DBMS</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">82%</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Interactive</th>
+                            <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">50%</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="font-weight: 400; color: red; margin-bottom: 1%; margin-top: 2%;">SF:</div>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;" class="table-active">Parameter</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Very Low<br>(0.05)</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Low<br>(0.04)</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Nominal<br>(0.03)</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">High<br>(0.02)</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Very High<br>(0.01)</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Extra High<br>(0.00)</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;" class="table-active">Precedentedness</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Thoroughly unprecedented</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Largely unprecedented</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Somewhat unprecedented</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Generally familiar</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Largely familiar</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Thoroughly familiar</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;" class="table-active">Development flexibility</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Rigorous</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Occasional relaxation</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Some relaxation</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">General conformity</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Some conformity</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">General goals</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;" class="table-active">Architecture risk resolution</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Little<br>20%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Some<br>40%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Often<br>60%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Generally<br>75%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Mostly<br>90%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Full<br>100%</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;" class="table-active">Team cohesion</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Very difficult interactions</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Some difficult interactions</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Basically cooperative</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Largely cooperative</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Highly cooperative</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Seamless interactions</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;" class="table-active">Process maturity</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Level 1</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Level 2</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Level 2+</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Level 3</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Level 4</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Level 5</th>
+                </tr>
+            </tbody>
+        </table>
+        <div style="font-weight: 600; font-size: 1.2rem; margin-top: 5%;">Post-architecture model</div>
+        <div style="font-weight: 400; color: red; margin-top: 1%; margin-bottom: 1%;">EM:</div>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-active">
+                  <th> </th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Very Low</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Low</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Nominal</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">High</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Very High</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Extra High</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">RELY</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.75</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.88</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">2.48</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.24</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.00</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">DATA</th>
+                    <th> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.93</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">2.03</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">2.03</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.00</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">CPLX</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.75</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.88</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">2.83</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.41</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.00</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">RUSE</th>
+                    <th> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.91</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">2.19</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.10</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.00</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">DOCU</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.89</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.95</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">3.12</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.56</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.00</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Time</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.11</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.31</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.67</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">STOR</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.06</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.21</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.57</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PVOL</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.87</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.15</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"1.30</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">ACAP</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.50</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.22</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.83</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.67</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PCAP</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.37</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.16</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.87</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.74</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PCON</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.24</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.92</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.84</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">AEXP</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.22</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.10</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.89</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.81</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PEXP</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.25</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.12</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.88</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.81</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">LTEX</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.22</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.10</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.91</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.84</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">TOOL</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.24</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.12</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.86</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.72</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">SITE</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.25</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.10</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.92</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.84</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">0.78</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">SCED</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.29</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.10</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1.00</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-active">
+                  <th> </th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Very Low</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Low</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Nominal</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">High</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Very High</th>
+                  <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Extra High</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">RELY</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">slight inconvenience</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">low, easily recoverable losses</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">moderate, easily recoverable losses</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">high financial loss</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">risk to human life</th>
+                    <th> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">DATA</th>
+                    <th> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">DB bytes/Pgm SLOC < 10</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">10 <= D/P < 100</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">100 <= D/P < 1000</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">D/P >= 1000</th>
+                    <th> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">CPLX</th>
+                    <th scope="col" colspan="6" style="font-weight: 400; text-align: center; vertical-align: middle;">See Table below</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">RUSE</th>
+                    <th> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">none</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">across project</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">across program</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">across product line</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">across multiple product lines</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">DOCU</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Many life-cycle needs uncovered</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Some life-cycle needs uncovered</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Right-sized to life-cycle needs</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Excessive for life-cycle needs</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Very excessive for life-cycle needs</th>
+                    <th> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Time</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"><= 50% use of available execution time</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">70%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">85%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">95%</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">STOR</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"><= 50% use of available storage</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">70%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">85%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">95%</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PVOL</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">major change every 12 mo.; minor change every 1 mo.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">major: 6 mo.;<br>minor: 2 wk.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">major: 2 mo.;<br>minor: 1 wk.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">major: 2 wk.;<br>minor: 2 days.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">ACAP</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">15<sup>th</sup> percentile</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">35<sup>th</sup> percentile</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">55<sup>th</sup> percentile</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">75<sup>th</sup> percentile</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">90<sup>th</sup> percentile</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PCAP</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">15<sup>th</sup> percentile</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">35<sup>th</sup> percentile</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">55<sup>th</sup> percentile</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">75<sup>th</sup> percentile</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">90<sup>th</sup> percentile</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PCON</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">48% / year</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">24% / year</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">12% / year</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">6% / year</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">3% / year</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">AEXP</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"><= 2 months</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">6 months</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1 year</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">3 years</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">6 years</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">PEXP</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"><= 2 months</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">6 months</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1 year</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">3 years</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">6 years</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">LTEX</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"><= 2 months</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">6 months</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">1 year</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">3 years</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">6 years</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">TOOL</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">edit, code, debug</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">simple, frontend, backend CASE, little integration</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">basic lifecycle tools, moderately integrated</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">strong, mature lifecycle tools, moderately integrated</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">strong, mature, proactive lifecycle tools, well integrated with processes, methods, reuse</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">SITE: Collocation</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">International</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Multi-city and Multi-company</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Multi-city and Multi-company</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Same city or metro. area</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Same building or complex</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Fully collocated</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">SITE: Communications</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Some phone, mail</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Individual phone, FAX</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Narrowband email</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Wideband electronic communication</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Wideband elect. comm, occasional video conf.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Interactive multimedia</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">SCED</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">75% of nominal</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">85%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">100%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">130%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">160%</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> </th>
+                </tr>
+            </tbody>
+        </table>
+        <div style="font-weight: 400; color: red; margin-bottom: 1%; margin-top: 2%;">CPLX:</div>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;"> </th>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Control Operations</th>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Computational Operations</th>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Device-dependent Operations</th>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">Data Management Operations</th>
+                    <th scope="col" style="font-weight: 500; text-align: center; vertical-align: middle;">User Interface Management Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Very Low</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> Straight-line code with a few non-nested structured programming operators: DOs, CASEs, IFTHENELSEs. Simple module composition via procedure calls or simple scripts</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Evaluation of simple expressions: e.g., A=B+C*(D-E)</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Simple read, write statements with simple formats</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Simple arrays in main memory. Simple COTS-DB queries, updates</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Simple input forms, report generators.</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Low</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Straightforward nesting of structured programming operators. Mostly simple predicates</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Evaluation of moderate-level expressions: e.g., D=SQRT(B**2-4.*A*C)</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">No cognizance needed of particular processor or I/O device characteristics. I/O done at GET/PUT level</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Single file subsetting with no data structure changes, no edits, no intermediate files. Moderately complex COTS-DB queries, updates</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Use of simple graphic user interface (GUI) builders.</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Nominal</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Mostly simple nesting. Some intermodule control. Decision tables. Simple callbacks or message passing, including middleware-supported distributed processing</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Use of standard math and statistical routines. Basic matrix/vector operations.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">I/O processing includes device selection, status checking and error processing.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Multi-file input and single file output. Simple structural changes, simple edits. Complex COTS-DB queries, updates.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Simple use of widget set. </th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">High</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;"> Highly nested structured programming operators with many compound predicates. Queue and stack control. Homogeneous, distributed processing. Single processor soft real-time control.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Basic numerical analysis: multivariate interpolation, ordinary differential equations. Basic truncation, roundoff concerns.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Operations at physical I/O level (physical storage address translations; seeks, reads, etc.). Optimized I/O overlap.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Simple triggers activated by data stream contents. Complex data restructuring.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Widget set development and extension. Simple voice I/O, multimedia.</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Very High</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Reentrant and recursive coding. Fixed-priority interrupt handling. Task synchronization, complex callbacks, heterogeneous distributed processing. Singleprocessor hard real-time control.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Difficult but structured numerical analysis: nearsingular matrix equations, partial differential equations. Simple parallelization.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Routines for interrupt diagnosis, servicing, masking. Communication line handling. Performanceintensive embedded systems.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Distributed database coordination. Complex triggers. Search optimization</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Moderately complex 2D/3D, dynamic graphics, multimedia.</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Extra High</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Multiple resource scheduling with dynamically changing priorities. Microcode-level control. Distributed hard realtime control</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Difficult and unstructured numerical analysis: highly accurate analysis of noisy, stochastic data. Complex parallelization</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Device timingdependent coding, micro-programmed operations. Performancecritical embedded systems.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Highly coupled, dynamic relational and object structures. Natural language data management.</th>
+                    <th scope="col" style="font-weight: 400; text-align: center; vertical-align: middle;">Complex multimedia, virtual reality</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

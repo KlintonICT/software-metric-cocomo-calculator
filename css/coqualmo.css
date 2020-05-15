@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.container{ padding-top: 2%; }
+
+.coqualmo-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.coqualmo-model{
+    display: flex;
+    flex-direction: row;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    justify-content: space-between;
+}
+
+.inner-container{ 
+    display: flex;
+    flex-direction: row;
+}
+
+.home{ 
+    padding-right: 3%;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 1%;
+}
+
+/* Intro style */
+.left-block{
+    padding-left: 6%;
+    padding-right: 6%;
+    width: 100%;
+    float: left;
+}
+
+.right-block{
+    padding-left: 6%;
+    padding-right: 6%;
+    width: 100%;
+    float: right;
+}
+
+.intro-box{
+    border: 2px solid #B8B8B8;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.intro-box-text,
+.intro-box-input,
+.intro-box-choice{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.intro-box-text > div{
+    margin-top: 25%;
+}
+
+.showing-text .hidden-text{
+  visibility: hidden;
+  background-color: #C4C4C4;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.showing-text:hover .hidden-text{
+    visibility: visible;
+}
+
+.intro-box-input-inner{
+    display: flex;
+    flex-direction: row;
+    margin-top: 13%;
+}
+
+input[type="number"]{
+    font-size: 1rem;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 1px solid #B8B8B8;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.intro-btn {
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 4%;
+}
+
+#intro-calculate,
+#remove-calculate{
+    border: none;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: 1.1rem;
+    background-color: #EFEFEF;
+    border-radius: 1.5rem;
+    -webkit-box-shadow: -1px 19px 23px -8px rgba(0,0,0,0.2);
+    -moz-box-shadow: -1px 19px 23px -8px rgba(0,0,0,0.2);
+    box-shadow: -1px 19px 23px -8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    outline-style: none;
+}
+
+.intro-driver-container{
+    display: flex;
+    flex-direction: row;
+}
+.intro-driver-left{
+    float: left;
+    width: 100%;
+}
+
+.intro-driver-right{
+    float: right;
+    width: 100%;
+}
+.intro-driver-center{
+    width: 100%;
+}
+
+.intro-table,
+.remove-table{
+    width: 100%;
+    margin-top: 5%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 2px solid #dddddd;
+    text-align: center;
+    padding: 1%;
+    vertical-align: middle;
+}
+
+/* Remove style */
+
+.remove-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.remove-text{
+    display: flex; 
+    flex-direction: column; 
+    width: 40%;
+}
+
+.remove-text > div {
+    margin-bottom: 2%;
+    margin-left: 5%;
+    justify-content: space-around;
+}
+
+.remove-input{
+    display: flex; 
+    flex-direction: column; 
+    width: 30%;
+    justify-content: space-around;
+}
+.remove-input > input{
+    margin-bottom: 2%;
+}
+
+.remove-radio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.remove-radio-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.remove-radio-inner > div{
+    margin-bottom: 15%;
+}
+
+.note{ 
+    font-style: italic;
+    color: red;
+    margin-top: 2%;
+}
